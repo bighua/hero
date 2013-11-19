@@ -1,5 +1,7 @@
 package blog;
 
+import util.Uitility;
+
 
 public class AllPermutation {
 
@@ -20,7 +22,7 @@ public class AllPermutation {
      */
     public static void calcAllPermutation_R(int[] all, int first, int num) {
     	if (first + 1 == num) {
-    		printArr(all);
+    		Uitility.printArr(all);
     		count++;
     		return;
     	}
@@ -41,7 +43,7 @@ public class AllPermutation {
      */
     public static void calcAllPermutation_cab(int[] all, int num)  
     {  
-    	printArr(all);
+    	Uitility.printArr(all);
     	int count1 = 1;
     	while(true) {
     		int i = num -2;
@@ -56,7 +58,7 @@ public class AllPermutation {
 
     		swap(all,k,i);
     		reverse(all, i+1, num-1);
-    		printArr(all);
+    		Uitility.printArr(all);
     		count1++;
     	}
     	System.out.println("cab sort total:" + count1);
@@ -73,13 +75,5 @@ public class AllPermutation {
     	while (s < e) {
     		swap(all, s++, e--);
     	}
-    }
-    
-    public static void printArr(int[] all) {
-
-		for (int j : all) {
-			System.out.print(j + "-");
-		}
-		System.out.println();
     }
 }
