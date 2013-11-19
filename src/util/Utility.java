@@ -1,6 +1,6 @@
 package util;
 
-public final class Uitility {
+public final class Utility {
 
     public static void printArr(int[] all) {
 

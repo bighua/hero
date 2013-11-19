@@ -1,6 +1,6 @@
 package blog;
 
-import util.Uitility;
+import util.Utility;
 
 public class PerfectShuffle {
 
@@ -19,7 +19,7 @@ public class PerfectShuffle {
         	}
         }
         shuffle(a, n);
-        Uitility.printArr(a);
+        Utility.printArr(a);
     }
     
     public static void shuffle(int[] a,int n) {  
