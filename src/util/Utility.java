@@ -9,4 +9,11 @@ public final class Utility {
 		}
 		System.out.println();
     }
+    public static void printCharArr(char[] all) {
+
+		for (char j : all) {
+			System.out.print(j + "-");
+		}
+		System.out.println();
+    }
 }
