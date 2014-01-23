@@ -14,7 +14,8 @@ public class CallNum {
      * @param args
      */
     public static void main(String[] args) {
-        System.out.println(getNumber("abcdefg", "gebcadf"));
+//        System.out.println(getNumber("abcdefg", "gebcadf"));
+        System.out.println(callNum(11));
     }
     
     public static int getNumber(String a,String b) {
@@ -25,6 +26,37 @@ public class CallNum {
             if (as[i] == bs[j]) j--;
         }
         return j + 1;
+    }
+    
+    public static int callNum(int m) {
+    	if (m == 1) return 7;
+    	if (m == 2) return 27;
+    	int d = 1;
+    	int tmp = m;
+    	while (tmp / 10 != 0) {
+    		d *= 10;
+    		tmp /= 10;
+    	}
+    	m -= d;
+    	int h = d * 10;
+    	if (m == 0) {
+    		h = d;
+    	} else if (m == 1){
+    		for (int i = 1; i < 7; i++) {
+    			int down = h * i + 7 * d - 1;
+				if (down % 7 == 0) {
+					return down;
+				}
+    		}
+    	} else if (m == 2) {
+    		for (int i = 1; i < 7; i++) {
+    			int down = h * i + 7 * d - 1;
+    			int up = h * i + 8 * d;
+    			if (down % 7 == 0 && up % 7 == 0) return down;
+    		}
+    	}
+    	if ((7 * h - 1) % 7 == 0) return 7 * h - 1;
+    	return 7 * h;
     }
 
 }
